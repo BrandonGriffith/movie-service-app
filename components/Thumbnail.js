@@ -7,6 +7,8 @@ const Thumbnail = forwardRef((props, ref) => {
     return (
     <div ref={ref} className="group cursor-pointer p-2 
         transition duration-200 ease-in transform 
+        sm:min-w-[30%] md:min-w-[30%] lg:min-w-[30%] 
+        xxxl:min-w-[30%] x-plus:min-w-[20%] 
         sm:hover:scale-105 hover:z-50">
         <Image 
         src={!props.result.backdrop_path?"/logo512.png":
@@ -28,8 +30,7 @@ const Thumbnail = forwardRef((props, ref) => {
                 {props.result.title || props.result.original_name}
             </h2>
             <p className="max-w-md line-clamp-2">{props.result.overview}</p>
-            <p className="flex items-center opacity-0 group-hover:opacity-100">
-                {console.log(props.result)}
+            <p className="flex whitespace-nowrap items-center md:opacity-0 group-hover:opacity-100">
                 <span className="text-purple-500">
                     <span className="p-2">Release Date:</span>
                     {props.result.release_date || props.result.first_air_date}
