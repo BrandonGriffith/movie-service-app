@@ -9,7 +9,7 @@ import HeaderItem from "./HeaderItem"
 
 const Header = () => {
     return (
-        <header className="flex flex-col sm:flex-row m-4 justify-between items-center h-auto">
+        <header className="flex flex-col sm:flex-row m-4 ml-8 justify-between items-center h-auto">
             <div className="flex flex-grow justify-evenly max-w-2xl">
                 <HeaderItem title="HOME" Icon={HomeIcon}/>
                 <HeaderItem title="TOP" Icon={BadgeCheckIcon}/>
@@ -18,6 +18,7 @@ const Header = () => {
                 <HeaderItem title="SEARCH" Icon={SearchIcon}/>
                 <HeaderItem title="PROFILE" Icon={UserIcon}/>
             </div>
+            <h1 className="max-w-6xl text-4xl text-green-400">Movie Service App Project</h1>
         <Image
         className="object-contain"
         src="/logo512.png"

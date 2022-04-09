@@ -15,22 +15,31 @@ const Thumbnail = forwardRef((props, ref) => {
             || url + props.result.poster_path 
             }
         alt={props.result.id} 
+        className="rounded-lg" 
         layout='responsive' 
         height={1080} 
         width={1920}
         priority
         />
         <div className="p-2">
-            <p className="truncate max-w-md">{props.result.overview}</p>
-            <h2 className="mt-1 text-2xl text-white 
+            <h2 className="mb-1 text-2xl text-white 
                 transition-all duration-100 ease-in-out 
                 group-hover:font-bold">
                 {props.result.title || props.result.original_name}
             </h2>
+            <p className="max-w-md line-clamp-2">{props.result.overview}</p>
             <p className="flex items-center opacity-0 group-hover:opacity-100">
-                {props.result.media_type} <span>__</span>
-                {props.result.release_date || props.result.first_air_date}
-                <ThumbUpIcon className="h-5 ml-5 mx-2"/> {props.result.vote_count}
+                {console.log(props.result)}
+                <span className="text-purple-500">
+                    <span className="p-2">Release Date:</span>
+                    {props.result.release_date || props.result.first_air_date}
+                </span>
+                <span className="text-orange-500">
+                    <span className="p-2 pl-5">Score:</span> {props.result.vote_average} <span>/10</span>
+                </span>
+                <span className="text-blue-500 flex">
+                    <ThumbUpIcon className="h-5 ml-5 mx-2"/> {props.result.vote_count}
+                </span>
             </p>
         </div>
     </div>
