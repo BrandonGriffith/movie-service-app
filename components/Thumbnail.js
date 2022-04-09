@@ -3,6 +3,7 @@ import { ThumbUpIcon } from "@heroicons/react/outline";
 import { forwardRef } from "react";
 
 const Thumbnail = forwardRef((props, ref) => {
+    Thumbnail.displayName = 'Thumbnail'
     const url = 'http://image.tmdb.org/t/p/original'
     return (
     <div ref={ref} className="group cursor-pointer p-2 

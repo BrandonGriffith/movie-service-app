@@ -20,6 +20,7 @@ const Header = () => {
             </div>
             <h1 className="max-w-6xl text-4xl text-green-400">Movie Service App Project</h1>
         <Image
+        alt="react/next.js"
         className="object-contain"
         src="/logo512.png"
         width={150} 
