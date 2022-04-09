@@ -9,7 +9,8 @@ const Thumbnail = forwardRef((props, ref) => {
         transition duration-200 ease-in transform 
         sm:hover:scale-105 hover:z-50">
         <Image 
-        src={url + props.result.backdrop_path 
+        src={!props.result.backdrop_path?"/logo512.png":
+            url + props.result.backdrop_path 
             || props.result.poster_path 
             || url + props.result.poster_path 
             }
@@ -27,7 +28,7 @@ const Thumbnail = forwardRef((props, ref) => {
                 {props.result.title || props.result.original_name}
             </h2>
             <p className="flex items-center opacity-0 group-hover:opacity-100">
-                {props.result.media_type}
+                {props.result.media_type} <span>__</span>
                 {props.result.release_date || props.result.first_air_date}
                 <ThumbUpIcon className="h-5 ml-5 mx-2"/> {props.result.vote_count}
             </p>
